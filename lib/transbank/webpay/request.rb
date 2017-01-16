@@ -9,9 +9,9 @@ module Transbank
         @document = Document.new(action, params)
         @client = Client.new wsdl_url
 
-        Rails.logger.debug 'Request'
-        Rails.logger.debug Hash.from_xml(document.unsigned_xml)["Envelope"]["Body"]
-        Rails.logger.debug '---------------------'
+        Rails.logger.info 'Request'
+        Rails.logger.info Hash.from_xml(document.unsigned_xml)["Envelope"]["Body"]
+        Rails.logger.info '---------------------'
       end
 
       def response

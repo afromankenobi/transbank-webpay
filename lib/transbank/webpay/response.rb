@@ -14,9 +14,9 @@ module Transbank
         @attributes = xml_to_hash(xml_return)
         @errors = []
 
-        Rails.logger.debug 'Response'
-        Rails.logger.debug Hash.from_xml(xml_return)
-        Rails.logger.debug '---------------------'
+        Rails.logger.info 'Response'
+        Rails.logger.info Hash.from_xml(xml_return)
+        Rails.logger.info '---------------------'
         validate_response!
       end
 
