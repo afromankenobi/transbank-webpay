@@ -8,6 +8,10 @@ module Transbank
         @action = action
         @document = Document.new(action, params)
         @client = Client.new wsdl_url
+
+        pp 'Request'
+        pp Hash.from_xml(document.unsigned_xml)["Envelope"]["Body"]
+        pp '---------------------'
       end
 
       def response

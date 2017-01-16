@@ -14,6 +14,9 @@ module Transbank
         @attributes = xml_to_hash(xml_return)
         @errors = []
 
+        pp 'Response'
+        pp Hash.from_xml(xml_return)
+        pp '---------------------'
         validate_response!
       end
 
